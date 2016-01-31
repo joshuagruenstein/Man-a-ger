@@ -100,7 +100,7 @@ $(document).ready(function() {
 
 	var weekEntries = getEntriesOfThisWeek(entries)
 	var weekMasses = getMasses(keys, weekEntries, products)
-	var dailyValues = [90, 90, 90, 90, 90]
+	var dailyValues = [65, 2.4, 25, 50, 300]
 	console.log(weekMasses)
 	for(var a in keys) {
 		$("#weeklyInfo").append("<tr><th>"+keys[a]+"</th><th>"+Math.round(weekMasses[keys[a]] * 100/ dailyValues[a])+"%</th></tr>")
