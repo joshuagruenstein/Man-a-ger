@@ -22,3 +22,4 @@ def newEntry(upcCode):
 	r = requests.post(url+"php/entry", data={"productID": upcCode})
 	print(r.text)
 storeProductInfo("0041143020104")
+newEntry("0041143020104")
