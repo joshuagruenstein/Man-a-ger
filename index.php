@@ -35,7 +35,7 @@
 						    		Items
 						    		<span class="caret"></span>
 						  		</button>
-						  		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1"id="dropdownMenu">
+						  		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="dropdownMenu">
 								</ul>
 							</div>
 						</div>
@@ -76,13 +76,6 @@
 							<tbody id="weeklyInfo">
 							</tbody>
 						</table>
-
-						<nav id="weeklyNav">
-							<ul class="pager">
-						    	<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
-						    	<li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
-							</ul>
-						</nav>
 					</div>
 				</div>
 			</div>
@@ -97,6 +90,16 @@
 	<script src="js/backend.js"></script>
 	<script src="js/index.js"></script>
 	<script>
+		$(function(){
+
+			$("#dropdownMenu li a").click(function(){
+
+		    	$("#basic-addon2").text("Quantity of " + $(this).text());
+
+			});
+
+		});
+
 		var response = ""
 		$( "#orderSubmit" ).click(function() {
 			console.log("hi")
