@@ -3,25 +3,34 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 
-function getMasses(keys, entries) {
+function getProductWithID(products, productID) {
+	for(var a in products) {
+		if(products[a].productID === productID) return products[a]
+	}
+}
+
+function getMasses(keys, entries, products) {
 	var masses = {}
 	for(var a = 0; a < keys.length; a++) {
 		masses[keys[a]] = 0
 	}
 	for(var a = 0; a < entries.length; a++) {
-		var product = getProduct(entries[a].productID)
+		var product = getProductWithID(products, entries[a].productID)
 		var nutrition = JSON.parse(product.nutrition.replace(/\^/g, ''))
 
 		for(var keyIndex in keys) {
 			var key = keys[keyIndex]
 			if(nutrition.hasOwnProperty(key) && nutrition[key].hasOwnProperty("qty") && nutrition[key]["qty"] != null) {
-				console.log(nutrition[key]["qty"])
 				if(nutrition[key]["qty"].includes("mg")) masses[key] += parseInt(nutrition[key]["qty"]) / 1000.0
 				else masses[key] += parseInt(nutrition[key]["qty"])
 			}
 		}
 	}
 	return masses;
+}
+
+function getEntriesOfThisWeek() {
+
 }
 
 function getCurrentEntries(entries) {
@@ -34,9 +43,10 @@ function getCurrentEntries(entries) {
 
 $(document).ready(function() {
 	var entries = getEntries()
+	var products = getProducts()
+
 	var keys = ["Total Fat", "Sodium", "Dietary Fiber", "Protein", "Total carbohydrates"]
-	var masses = getMasses(keys, entries)
-	console.log(masses)
+	var masses = getMasses(keys, entries, products)
 	var total = 0
 	for(var a = 0; a < keys.length; a++) {
 		total += masses[keys[a]]
@@ -58,10 +68,8 @@ $(document).ready(function() {
 
 	var currentEntries = getCurrentEntries(entries)
 	var alreadyIn = Array()
-	console.log(currentEntries)
 	for(var a in currentEntries) {
 		var entry = currentEntries[a]
-		console.log(alreadyIn)
 
 		// Is in
 		var isAlreadyIn = false
@@ -78,7 +86,9 @@ $(document).ready(function() {
 			if(a != b && currentEntries[b].productID === entry.productID) number++
 		}
 
-		$("#inFridgeList").append("<li class='list-group-item'> <span class='label label-default label-pill pull-xs-left'>"+number+"</span> "+getProduct(entry.productID).description+" </li>")
+		var product = getProductWithID(products, entry.productID)
+		$("#inFridgeList").append("<li class='list-group-item'> <span class='label label-default label-pill pull-xs-left'>"+number+"</span> "+product.description+" </li>")
+		$("#dropdownMenu").append("<li><a href='#'>"+product.description+"</a></li>")
 		alreadyIn.push(entry)
 	}
 })

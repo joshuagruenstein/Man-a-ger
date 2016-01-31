@@ -6,10 +6,10 @@ function getEntries() {
 		async: false,
 		method: "GET",
 		success: function(result) {
-			console.log(result)
+			//console.log(result)
 		},
 		error: function (xhr, ajaxOptions, thrownError) {
-			console.log(xhr.responseText)
+			//console.log(xhr.responseText)
 		}
 	});
 
@@ -23,10 +23,26 @@ function getProduct(productID) {
 		method: "GET",
 		data: {productID: productID},
 		success: function(result) {
-			console.log(result)
+			//console.log(result)
 		},
 		error: function (xhr, ajaxOptions, thrownError) {
-			console.log(xhr.responseText)
+			//console.log(xhr.responseText)
+		}
+	});
+
+	return result.responseJSON;
+}
+
+function getProducts() {
+	var result = $.ajax({
+		url: url+"product", 
+		async: false,
+		method: "GET",
+		success: function(result) {
+			//console.log(result)
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+			///console.log(xhr.responseText)
 		}
 	});
 
