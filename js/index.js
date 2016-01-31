@@ -21,7 +21,7 @@ function getMasses(keys, entries, products) {
 		for(var keyIndex in keys) {
 			var key = keys[keyIndex]
 			if(nutrition.hasOwnProperty(key) && nutrition[key].hasOwnProperty("qty") && nutrition[key]["qty"] != null) {
-				if(nutrition[key]["qty"].includes("mg")) masses[key] += parseInt(nutrition[key]["qty"]) / 1000.0
+				if(nutrition[key]["qty"].indexOf("mg") > -1) masses[key] += parseInt(nutrition[key]["qty"]) / 1000.0
 				else masses[key] += parseInt(nutrition[key]["qty"])
 			}
 		}
@@ -29,8 +29,14 @@ function getMasses(keys, entries, products) {
 	return masses;
 }
 
-function getEntriesOfThisWeek() {
-
+function getEntriesOfThisWeek(entries) {
+	var returnArray = Array()
+	for(var a in entries) {
+		console.log(new Date().getTime())
+		console.log(new Date(entries[a].checkedIn).getTime())
+		if(new Date(entries[a].checkedIn).getTime() - new Date().getTime() < 604800000) returnArray.push(entries[a])
+	}
+	return returnArray
 }
 
 function getCurrentEntries(entries) {
@@ -90,5 +96,13 @@ $(document).ready(function() {
 		$("#inFridgeList").append("<li class='list-group-item'> <span class='label label-default label-pill pull-xs-left'>"+number+"</span> "+product.description+" </li>")
 		$("#dropdownMenu").append("<li><a href='#'>"+product.description+"</a></li>")
 		alreadyIn.push(entry)
+	}
+
+	var weekEntries = getEntriesOfThisWeek(entries)
+	var weekMasses = getMasses(keys, weekEntries, products)
+	var dailyValues = [65, 2.4, 25, 50, 300]
+	console.log(weekMasses)
+	for(var a in keys) {
+		$("#weeklyInfo").append("<tr><th>"+keys[a]+"</th><th>"+Math.round(weekMasses[keys[a]] * 100/ dailyValues[a])+"%</th></tr>")
 	}
 })

@@ -21,6 +21,10 @@
 		<div class="pageContent">
 			<div class="row">
 				<div class="col-sm-7" id="inventoryColumn">
+					<div class="jumbotron" id="titleJumbotron">
+						<h2>Kitchen Manager</h2>
+						<p>Kitchen manager is a tool developed to help people with their daily lives.</p>
+					</div>
 					<ul class="list-group" id="inFridgeList">
 					</ul>
 
@@ -49,21 +53,8 @@
 				<div class="col-sm-5" id="nutritionColumn">
 					<div class="panel panel-primary" id="nutritionPanel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Nutrition</h3>
+							<h3 class="panel-title">Intake nutrition by mass</h3>
 						</div>
-
-						<table class="table well well-sm" id="nutritionTable">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Calories</th>
-									<th>Sugar</th>
-									<th>Vitamins</th>
-								</tr>
-							</thead>
-							<tbody id="nutritionInfo">
-							</tbody>
-						</table>
 
 						<div class="text-center" id="chartContainer">
 							<canvas id="canvas" width="200%" height="200%"></canvas>
@@ -83,18 +74,6 @@
 								</tr>
 							</thead>
 							<tbody id="weeklyInfo">
-								<tr>
-									<th>Calories</th>
-									<th>22</th>
-								</tr>
-								<tr>
-									<th>Sodium</th>
-									<th>15</th>
-								</tr>
-								<tr>
-									<th>Vitamin A</th>
-									<th>67</th>
-								</tr>
 							</tbody>
 						</table>
 
