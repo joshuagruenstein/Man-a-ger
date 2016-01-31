@@ -74,11 +74,11 @@ class HackTrinAPI extends API
 		} elseif(isset($_POST['productID'])
 			&& isset($_POST['ingredients'])
 			&& isset($_POST['nutrition'])
-			&& isset($_POST['usage'])
+			&& isset($_POST['usageInfo'])
 			&& isset($_POST['brand'])
 			&& isset($_POST['description'])) {
-
-			$this->insert("INSERT INTO Product (productID, ingredients, nutrition, usage, brand, description) VALUES ({$_POST['productID']}, {_POST['ingredients']}, {_POST['nutrition']}, {_POST['usage']}, {_POST['brand']}, {_POST['description']})");
+			echo "INSERT INTO Product (productID, ingredients, nutrition, usageInfo, brand, description) VALUES ('{$_POST['productID']}', '{$_POST['ingredients']}', '{$_POST['nutrition']}', '{$_POST['usageInfo']}', '{$_POST['brand']}', '{$_POST['description']}')";
+			$this->insert("INSERT INTO Product (productID, ingredients, nutrition, usageInfo, brand, description) VALUES ('{$_POST['productID']}', '{$_POST['ingredients']}', '{$_POST['nutrition']}', '{$_POST['usageInfo']}', '{$_POST['brand']}', '{$_POST['description']}')");
 		} else {
 			return $this->selectMultiple("SELECT * FROM Product");
 		}
@@ -90,9 +90,8 @@ class HackTrinAPI extends API
 		} elseif (isset($_POST['productID']) &&
 			isset($_POST['checkedIn'])) {
 
-			$this->insert("INSERT INTO Entry (productID, checkedIn) VALUES ({$_POST['productID']}, {_POST['checkedIn']})");
-		} elseif(isset($_POST['productID'])
-			&& isset($_POST['checkedOut'])) {
+			$this->insert("INSERT INTO Entry (productID, checkedIn) VALUES ({$_POST['productID']}, '".date('Y-m-d H:i:s')."')");
+		} elseif(isset($_POST['productID'])) {
 
 			$this->insert("UPDATE Entry set checkedOut = {$_POST['checkedOut']} WHERE productID = {$_POST['checkedOut']}");
 		} else {
