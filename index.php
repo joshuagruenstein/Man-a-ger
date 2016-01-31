@@ -28,22 +28,7 @@
 					    	<button class="btn btn-default" type="button">Enter</button>
 					    </span>
 					</div>
-					<ul class="list-group">
-						<li class="list-group-item">
-							<span class="label label-default label-pill pull-xs-left">9</span>
-					    	Apple
-					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
-					  	</li>
-					  	<li class="list-group-item">
-					    	<span class="label label-default label-pill pull-xs-left">2</span>
-					    	Orange
-					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
-					  	</li>
-					  	<li class="list-group-item">
-					    	<span class="label label-default label-pill pull-xs-left">1</span>
-					    	Milk
-					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
-					  	</li>
+					<ul class="list-group" id="inFridgeList">
 					</ul>
 				</div>
 				<div class="col-sm-5" id="nutritionColumn">
@@ -76,9 +61,10 @@
 
 	<?php include 'includes/footer.php'; ?>
 
-	<script src="js/customCharts.js"></script>
 	<script src="lib/jquery.min.js"></script>
 	<script src="lib/bootstrap.min.js"></script>
+	<script src="js/backend.js"></script>
 	<script src="lib/Chart.js"></script>
+	<script src="js/index.js"></script>
 </body>
 </html>

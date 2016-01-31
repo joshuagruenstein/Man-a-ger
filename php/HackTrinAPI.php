@@ -68,7 +68,6 @@ class HackTrinAPI extends API
 
 	// ENDPOINTS
 	protected function product() {
-		var_dump($_POST);
 		if(isset($_GET['productID'])) {
 			return $this->select("SELECT * FROM Product WHERE productID = {$_GET['productID']}");
 		} elseif(isset($_POST['productID'])
@@ -77,7 +76,7 @@ class HackTrinAPI extends API
 			&& isset($_POST['usageInfo'])
 			&& isset($_POST['brand'])
 			&& isset($_POST['description'])) {
-			echo "INSERT INTO Product (productID, ingredients, nutrition, usageInfo, brand, description) VALUES ('{$_POST['productID']}', '{$_POST['ingredients']}', '{$_POST['nutrition']}', '{$_POST['usageInfo']}', '{$_POST['brand']}', '{$_POST['description']}')";
+			
 			$this->insert("INSERT INTO Product (productID, ingredients, nutrition, usageInfo, brand, description) VALUES ('{$_POST['productID']}', '{$_POST['ingredients']}', '{$_POST['nutrition']}', '{$_POST['usageInfo']}', '{$_POST['brand']}', '{$_POST['description']}')");
 		} else {
 			return $this->selectMultiple("SELECT * FROM Product");
