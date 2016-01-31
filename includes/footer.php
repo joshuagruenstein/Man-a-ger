@@ -16,7 +16,7 @@
 				<h4 class="modal-title" id="myModalLabel">About Kitchen Manager</h4>
 			</div>
 			<div class="modal-body">
-				<p>Kitchen manager is a tool developed to help people with their daily lives<p>
+				<p>Kitchen manager is a tool developed to help people with their daily lives.<p>
 				<p>Kitchen Manager was created by programmers  <a href="https://github.com/truell20">Michael Truell</a>, <a href="https://github.com/joshuagruenstein">Josh Gruenstein</a>, <a href="https://github.com/G4cool">Luca Koval</a>, and <a href="https://github.com/Sydriax">Ben Spector</a> from Horace Mann during the HackTrin hackathon.  The code is available on Github <a href="https://github.com/BackPropagation/NYCSL">here</a>.  You may contact us at <a href="#">contact@kitchenmanager</a>.
 			</div>
 		</div>
