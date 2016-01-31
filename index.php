@@ -95,19 +95,19 @@
 						</div>
 					</div>
 
-					<div class="panel panel-primary" id="dailyPanel">
+					<div class="panel panel-primary" id="weeklyPanel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Daily Values</h3>
+							<h3 class="panel-title">Weekly Values</h3>
 						</div>
 
-						<table class="table well well-sm" id="dailyTable">
+						<table class="table well well-sm" id="weeklyTable">
 							<thead>
 								<tr>
 									<th>Name</th>
 									<th>Percent</th>
 								</tr>
 							</thead>
-							<tbody id="dailyInfo">
+							<tbody id="weeklyInfo">
 								<tr>
 									<th>Calories</th>
 									<th>22</th>
@@ -122,6 +122,13 @@
 								</tr>
 							</tbody>
 						</table>
+
+						<nav id="weeklyNav">
+							<ul class="pager">
+						    	<li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+						    	<li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+							</ul>
+						</nav>
 					</div>
 				</div>
 			</div>
