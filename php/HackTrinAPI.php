@@ -86,12 +86,12 @@ class HackTrinAPI extends API
 	protected function entry() {
 		if(isset($_GET['productID'])) {
 			return $this->selectMultiple("SELECT * FROM Entry WHERE productID = {$_GET['productID']}");
-		} elseif (isset($_POST['productID'])) {
-
-			$this->insert("INSERT INTO Entry (productID, checkedIn) VALUES ('{$_POST['productID']}', '".date('Y-m-d H:i:s')."')");
 		} elseif(isset($_POST['productID']) && isset($_POST['checkout'])) {
 
 			$this->insert("UPDATE Entry set checkedOut = '".date('Y-m-d H:i:s')."' WHERE productID = {$_POST['productID']} LIMIT 1");
+		} elseif (isset($_POST['productID'])) {
+
+			$this->insert("INSERT INTO Entry (productID, checkedIn) VALUES ('{$_POST['productID']}', '".date('Y-m-d H:i:s')."')");
 		} else {
 			return $this->selectMultiple("SELECT * FROM Entry");
 		}
