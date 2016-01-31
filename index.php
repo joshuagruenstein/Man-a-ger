@@ -42,7 +42,7 @@
 						<div class="col-sm-10">
 							<div class="input-group" id="quantityInput">
 								<span class="input-group-addon" id="basic-addon2">Quantity</span>
-								<input type="text" class="form-control" placeholder="3" aria-describedby="basic-addon2">
+								<input type="text" class="form-control" placeholder="3" id="orderQuantity" aria-describedby="basic-addon2">
 								<span class="input-group-btn">
 							    	<button class="btn btn-default" type="button" id="orderSubmit">Enter</button>
 							    </span>
@@ -89,28 +89,5 @@
 	<script src="lib/Chart.js"></script>
 	<script src="js/backend.js"></script>
 	<script src="js/index.js"></script>
-	<script>
-		$(function(){
-
-			$("#dropdownMenu li a").click(function(){
-
-		    	$("#basic-addon2").text($(this).text());
-
-			});
-
-		});
-
-		var response = ""
-		$( "#orderSubmit" ).click(function() {
-			console.log("hi")
-			response = $.ajax({
-				url: "https://api.postmates.com/v1/customers/cus_KeswyTmbpCWYLk/delivery_quotes", 
-				async: false,
-				method: "POST",
-				data: { dropoff_address: "799 Park Avenue, New York, NY 10021", pickup_address: "139 West 91st Street, New York, NY 10024" }
-			});
-			console.log("response: " + JSON.stringify(response));
-		});
-	</script>
 </body>
 </html>

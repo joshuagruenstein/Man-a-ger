@@ -100,7 +100,7 @@ $(document).ready(function() {
 		try {
 			var product = getProductWithID(products, entry.productID)
 			$("#inFridgeList").append("<li class='list-group-item'> <span class='label label-default label-pill pull-xs-left'>"+number+"</span> "+product.description+" </li>")
-			$("#dropdownMenu").append("<li><a href='#'>"+product.description+"</a></li>")
+			$("#dropdownMenu").append("<li><a href='#' UPC='" + product.productID + "''>"+product.description+"</a></li>")
 			alreadyIn.push(entry)
 		} catch (err) {
 			continue
@@ -114,4 +114,15 @@ $(document).ready(function() {
 	for(var a in keys) {
 		$("#weeklyInfo").append("<tr><th>"+keys[a]+"</th><th>"+Math.round(weekMasses[keys[a]] * 100/ dailyValues[a])+"%</th></tr>")
 	}
+
+	$("#dropdownMenu li a").click(function(){
+		$("#basic-addon2").text($(this).text());
+		$("#basic-addon2").attr("UPC",$(this).attr("UPC"));
+	});
+
+	$("#orderSubmit").click(function(){
+		var productUPC = $("#basic-addon2").attr("UPC")
+		var quantity = $("#orderQuantity").val()
+		submitOrder(productUPC,quantity)
+	})
 })
