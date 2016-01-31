@@ -48,7 +48,7 @@
 									<span class="input-group-addon" id="basic-addon2">Quantity</span>
 									<input type="text" class="form-control" placeholder="3" aria-describedby="basic-addon2">
 									<span class="input-group-btn">
-								    	<button class="btn btn-default" type="button" id="orderSubmit">Enter</button>
+								    	<button class="btn btn-default" type="button" id="orderSubmit">Order</button>
 								    </span>
 								</div>
 							</div>
