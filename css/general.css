@@ -6,7 +6,16 @@ body {
 	margin-bottom: 10px;
 }
 
+#quantityInput {
+	margin-bottom: 10px;
+}
+
 #chartContainer {
 	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+#weeklyNav {
+	margin-left: 20px;
+	margin-right: 20px;
 }
