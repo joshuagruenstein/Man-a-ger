@@ -40,7 +40,7 @@
 								<span class="input-group-addon" id="basic-addon2">Quantity</span>
 								<input type="text" class="form-control" placeholder="3" aria-describedby="basic-addon2">
 								<span class="input-group-btn">
-							    	<button class="btn btn-default" type="button">Enter</button>
+							    	<button class="btn btn-default" type="button" id="orderSubmit">Enter</button>
 							    </span>
 							</div>
 						</div>
@@ -111,6 +111,21 @@
 	</div>
 
 	<?php include 'includes/footer.php'; ?>
+
+	<script>
+		var url = "php/";
+		var response = ""
+		$( "#orderSubmit" ).click(function() {
+			console.log("hi")
+			response = $.ajax({
+				url: url+"https://api.postmates.com/v1/customers/cus_abc123/delivery_quotes", 
+				async: false,
+				method: "POST",
+				data: { dropoff_address: "799 Park Avenue, New York, NY 10021", pickup_address: "139 West 91st Street, New York, NY 10024" }
+			});
+			console.log(response);
+		});
+	</script>
 
 	<script src="lib/jquery.min.js"></script>
 	<script src="lib/bootstrap.min.js"></script>
