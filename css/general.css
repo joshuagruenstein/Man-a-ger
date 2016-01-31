@@ -1,11 +1,7 @@
-#inventoryColumn {
-	margin-top: 10px;
+body {
+	margin-top: 50px;
 }
 
 #inventoryInput {
 	margin-bottom: 10px;
-}
-
-#nutritionPanel {
-	margin-top: 10px;
 }
