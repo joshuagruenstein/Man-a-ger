@@ -2,6 +2,14 @@ body {
 	margin-top: 50px;
 }
 
+#titleJumbotron {
+	padding: 20px inherit;
+}
+
+#titleHeader{
+	font-size: 50px;
+}
+
 #inventoryInput {
 	margin-bottom: 10px;
 }

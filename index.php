@@ -21,6 +21,9 @@
 		<div class="pageContent">
 			<div class="row">
 				<div class="col-sm-7" id="inventoryColumn">
+					<div class="jumbotron text-center" id="titleJumbotron">
+						<h1 id="titleHeader">Kitchen Manager</h1>
+					</div>
 					<ul class="list-group" id="inFridgeList">
 					</ul>
 
