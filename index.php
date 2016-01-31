@@ -18,7 +18,29 @@
 
 <body>
 	<div class="container">
-		
+		<div class="pageContent">
+			<div class="row">
+				<div class="col-sm-8">
+					<ul class="list-group">
+						<li class="list-group-item">
+							<span class="label label-default label-pill pull-xs-left">14</span>
+					    	Apples
+					    	<span class="glyphicon glyphicon-remove" id="x"></span>
+					  	</li>
+					  	<li class="list-group-item">
+					    	<span class="label label-default label-pill pull-xs-left">2</span>
+					    	Oranges
+					    	<span class="glyphicon glyphicon-remove" id="x"></span>
+					  	</li>
+					  	<li class="list-group-item">
+					    	<span class="label label-default label-pill pull-xs-left">1</span>
+					    	Milk
+					    	<span class="glyphicon glyphicon-remove" id="x"></span>
+					  	</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<?php include 'includes/footer.php'; ?>
