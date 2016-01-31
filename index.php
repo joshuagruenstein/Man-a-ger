@@ -28,7 +28,7 @@
 					    	<button class="btn btn-default" type="button">Enter</button>
 					    </span>
 					</div>
-					<ul class="list-group">
+					<ul class="list-group" id="inFridgeList">
 					</ul>
 
 					<div class="row">
