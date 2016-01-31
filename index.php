@@ -22,8 +22,8 @@
 			<div class="row">
 				<div class="col-sm-7" id="inventoryColumn">
 					<div class="jumbotron" id="titleJumbotron">
-						<h2>Kitchen Manager</h2>
-						<p>Kitchen manager is a tool developed to help people with their daily lives.</p>
+						<h2>Man(a)ger</h2>
+						<p>Man(a)ger is a tool developed to help people with their daily lives.</p>
 					</div>
 					<ul class="list-group" id="inFridgeList">
 					</ul>

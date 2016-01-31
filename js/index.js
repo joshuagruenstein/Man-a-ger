@@ -16,7 +16,12 @@ function getMasses(keys, entries, products) {
 	}
 	for(var a = 0; a < entries.length; a++) {
 		var product = getProductWithID(products, entries[a].productID)
-		var nutrition = JSON.parse(product.nutrition.replace(/\^/g, '').replace(/\\/g, ''))
+		var nutrition = 0
+		try {
+			nutrition = JSON.parse(product.nutrition.replace(/\^/g, '').replace(/\\/g, ''))
+		} catch(err) {
+			continue
+		}
 
 		for(var keyIndex in keys) {
 			var key = keys[keyIndex]
@@ -92,10 +97,14 @@ $(document).ready(function() {
 			if(a != b && currentEntries[b].productID === entry.productID) number++
 		}
 
-		var product = getProductWithID(products, entry.productID)
-		$("#inFridgeList").append("<li class='list-group-item'> <span class='label label-default label-pill pull-xs-left'>"+number+"</span> "+product.description+" </li>")
-		$("#dropdownMenu").append("<li><a href='#'>"+product.description+"</a></li>")
-		alreadyIn.push(entry)
+		try {
+			var product = getProductWithID(products, entry.productID)
+			$("#inFridgeList").append("<li class='list-group-item'> <span class='label label-default label-pill pull-xs-left'>"+number+"</span> "+product.description+" </li>")
+			$("#dropdownMenu").append("<li><a href='#'>"+product.description+"</a></li>")
+			alreadyIn.push(entry)
+		} catch (err) {
+			continue
+		}
 	}
 
 	var weekEntries = getEntriesOfThisWeek(entries)
