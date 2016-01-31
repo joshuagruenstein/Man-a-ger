@@ -21,7 +21,7 @@ function getMasses(keys, entries, products) {
 		for(var keyIndex in keys) {
 			var key = keys[keyIndex]
 			if(nutrition.hasOwnProperty(key) && nutrition[key].hasOwnProperty("qty") && nutrition[key]["qty"] != null) {
-				if(nutrition[key]["qty"].includes("mg")) masses[key] += parseInt(nutrition[key]["qty"]) / 1000.0
+				if(nutrition[key]["qty"].indexOf("mg") > -1) masses[key] += parseInt(nutrition[key]["qty"]) / 1000.0
 				else masses[key] += parseInt(nutrition[key]["qty"])
 			}
 		}
