@@ -1,11 +1,21 @@
-#inventoryColumn {
-	margin-top: 10px;
+body {
+	margin-top: 50px;
 }
 
 #inventoryInput {
 	margin-bottom: 10px;
 }
 
-#nutritionPanel {
-	margin-top: 10px;
+#quantityInput {
+	margin-bottom: 10px;
+}
+
+#chartContainer {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#weeklyNav {
+	margin-left: 20px;
+	margin-right: 20px;
 }
