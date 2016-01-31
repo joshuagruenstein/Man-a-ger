@@ -104,12 +104,22 @@
 							<thead>
 								<tr>
 									<th>Name</th>
-									<th>Calories</th>
-									<th>Sugar</th>
-									<th>Vitamins</th>
+									<th>Percent</th>
 								</tr>
 							</thead>
 							<tbody id="dailyInfo">
+								<tr>
+									<th>Calories</th>
+									<th>22</th>
+								</tr>
+								<tr>
+									<th>Sodium</th>
+									<th>15</th>
+								</tr>
+								<tr>
+									<th>Vitamin A</th>
+									<th>67</th>
+								</tr>
 							</tbody>
 						</table>
 					</div>
