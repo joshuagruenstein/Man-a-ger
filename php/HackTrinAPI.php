@@ -129,7 +129,7 @@ class HackTrinAPI extends API
 
 	protected function delivery() {
 		if(isset($_GET['productID'])) {
-			$productArray = $this->select("SELECT * FROM Product WHERE productID = {$_GET['productID']}");
+			/*$productArray = $this->select("SELECT * FROM Product WHERE productID = {$_GET['productID']}");
 			$words = explode(" ", $productArray['description']);
 			$merchantMenu = json_decode(file_get_contents("https://api.delivery.com/merchant/998/menu?client_id=ZDliNzM4YjVhNjc4OWEzMTI4YmMxNDlkNzlmNDZjNmE5"));
 			//var_dump($merchantMenu->menu);
@@ -164,7 +164,7 @@ class HackTrinAPI extends API
 }"));
 					break;
 				}
-			}
+			}*/
 		}
 	}
 }
