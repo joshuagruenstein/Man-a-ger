@@ -35,7 +35,7 @@
 						    		Items
 						    		<span class="caret"></span>
 						  		</button>
-						  		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1"id="dropdownMenu">
+						  		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="dropdownMenu">
 								</ul>
 							</div>
 						</div>
@@ -97,6 +97,16 @@
 	<script src="js/backend.js"></script>
 	<script src="js/index.js"></script>
 	<script>
+		$(function(){
+
+			$("#dropdownMenu li a").click(function(){
+
+		    	$("#basic-addon2").text("Quantity of " + $(this).text());
+
+			});
+
+		});
+
 		var response = ""
 		$( "#orderSubmit" ).click(function() {
 			console.log("hi")
