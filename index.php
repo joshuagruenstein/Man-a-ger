@@ -116,6 +116,7 @@
 	<script src="lib/bootstrap.min.js"></script>
 	<script src="lib/Chart.js"></script>
 	<script src="js/backend.js"></script>
+	<script src="js/index.js"></script>
 	<script>
 		var response = ""
 		$( "#orderSubmit" ).click(function() {
