@@ -46,23 +46,30 @@
 					  	</li>
 					</ul>
 
-					<div class="input-group" id="orderInput">
-						<span class="input-group-addon" id="basic-addon2">Quantity</span>
-						<input type="text" class="form-control" placeholder="3" aria-describedby="basic-addon2">
-						<span class="input-group-btn">
-					    	<button class="btn btn-default" type="button">Enter</button>
-					    </span>
-					</div>
-					<div class="dropdown">
-					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Items
-					    <span class="caret"></span>
-					  </button>
-					  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-					    	<li><a href="#">Apple</a></li>
-					    	<li><a href="#">Orange</a></li>
-					    	<li><a href="#">Milk</a></li>
-						</ul>
+					<div class="row">
+						<div class="col-sm-1">
+							<div class="dropdown" id="itemDropdown">
+						  		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    		Items
+						    		<span class="caret"></span>
+						  		</button>
+						  		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							    	<li><a href="#">Apple</a></li>
+							    	<li><a href="#">Orange</a></li>
+							    	<li><a href="#">Milk</a></li>
+								</ul>
+							</div>
+						</div>
+						</div>
+						<div class="col-sm-11">
+							<div class="input-group" id="quantityInput">
+								<span class="input-group-addon" id="basic-addon2">Quantity</span>
+								<input type="text" class="form-control" placeholder="3" aria-describedby="basic-addon2">
+								<span class="input-group-btn">
+							    	<button class="btn btn-default" type="button">Enter</button>
+							    </span>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="col-sm-5" id="nutritionColumn">
