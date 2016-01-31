@@ -3,13 +3,19 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.replace(new RegExp(search, 'g'), replacement);
 };
 
-function getMasses(keys, entries) {
+function getProductWithID(products, productID) {
+	for(var a in products) {
+		if(products[a].productID === productID) return products[a]
+	}
+}
+
+function getMasses(keys, entries, products) {
 	var masses = {}
 	for(var a = 0; a < keys.length; a++) {
 		masses[keys[a]] = 0
 	}
 	for(var a = 0; a < entries.length; a++) {
-		var product = getProduct(entries[a].productID)
+		var product = getProductWithID(products, entries[a].productID)
 		var nutrition = JSON.parse(product.nutrition.replace(/\^/g, ''))
 
 		for(var keyIndex in keys) {
@@ -23,6 +29,10 @@ function getMasses(keys, entries) {
 	return masses;
 }
 
+function getEntriesOfThisWeek() {
+
+}
+
 function getCurrentEntries(entries) {
 	var returnArray = Array()
 	for(var a = 0; a < entries.length; a++) {
@@ -33,15 +43,14 @@ function getCurrentEntries(entries) {
 
 $(document).ready(function() {
 	var entries = getEntries()
+	var products = getProducts()
+
 	var keys = ["Total Fat", "Sodium", "Dietary Fiber", "Protein", "Total carbohydrates"]
-	var masses = getMasses(keys, entries)
-	console.log("masses " + masses)
-	console.log(masses)
+	var masses = getMasses(keys, entries, products)
 	var total = 0
 	for(var a = 0; a < keys.length; a++) {
 		total += masses[keys[a]]
 	}
-	console.log(total)
 	var colors = ["#F7464A", "#5AD3D1", "#FDB45C", "#949FB1", "#4D5360", "#5AD3D1"]
 	var highlights = ["#FF5A5E", "#5AD3D1", "#A8B3C5", "#A8B3C5", "#616774", "#5AD3D1"]
 	var pieData = Array()
@@ -77,7 +86,9 @@ $(document).ready(function() {
 			if(a != b && currentEntries[b].productID === entry.productID) number++
 		}
 
-		$("#inFridgeList").append("<li class='list-group-item'> <span class='label label-default label-pill pull-xs-left'>"+number+"</span> "+getProduct(entry.productID).description+" </li>")
+		var product = getProductWithID(products, entry.productID)
+		$("#inFridgeList").append("<li class='list-group-item'> <span class='label label-default label-pill pull-xs-left'>"+number+"</span> "+product.description+" </li>")
+		$("#dropdownMenu").append("<li><a href='#'>"+product.description+"</a></li>")
 		alreadyIn.push(entry)
 	}
 })
