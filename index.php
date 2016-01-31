@@ -13,31 +13,58 @@
 
 	<link href="lib/bootstrap.min.css" rel="stylesheet">
 
-	<!-- <link href="style/general.css" rel="stylesheet"> -->
+	<link href="css/general.css" rel="stylesheet">
 </head>
 
 <body>
 	<div class="container">
 		<div class="pageContent">
 			<div class="row">
-				<div class="col-sm-8">
+				<div class="col-sm-7" id="inventoryColumn">
+					<div class="input-group" id="inventoryInput">
+						<span class="input-group-addon" id="basic-addon2">Food</span>
+						<input type="text" class="form-control" placeholder="Yogurt" aria-describedby="basic-addon2">
+						<span class="input-group-btn">
+					    	<button class="btn btn-default" type="button">Enter</button>
+					    </span>
+					</div>
 					<ul class="list-group">
 						<li class="list-group-item">
-							<span class="label label-default label-pill pull-xs-left">14</span>
-					    	Apples
-					    	<span class="glyphicon glyphicon-remove" id="x"></span>
+							<span class="label label-default label-pill pull-xs-left">9</span>
+					    	Apple
+					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
 					  	</li>
 					  	<li class="list-group-item">
 					    	<span class="label label-default label-pill pull-xs-left">2</span>
-					    	Oranges
-					    	<span class="glyphicon glyphicon-remove" id="x"></span>
+					    	Orange
+					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
 					  	</li>
 					  	<li class="list-group-item">
 					    	<span class="label label-default label-pill pull-xs-left">1</span>
 					    	Milk
-					    	<span class="glyphicon glyphicon-remove" id="x"></span>
+					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
 					  	</li>
 					</ul>
+				</div>
+				<div class="col-sm-5" id="nutritionColumn">
+					<div class="panel panel-primary" id="nutritionPanel">
+						<div class="panel-heading">
+							<h3 class="panel-title">Nutrition</h3>
+						</div>
+
+						<table class="table well well-sm" id="nutritionTable">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Calories</th>
+									<th>Sugar</th>
+									<th>Vitamins</th>
+								</tr>
+							</thead>
+							<tbody id="nutritionInfo">
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
