@@ -91,7 +91,7 @@ class HackTrinAPI extends API
 			$this->insert("INSERT INTO Entry (productID, checkedIn) VALUES ('{$_POST['productID']}', '".date('Y-m-d H:i:s')."')");
 		} elseif(isset($_POST['productID']) && isset($_POST['checkout'])) {
 
-			$this->insert("UPDATE Entry set checkedOut = '".date('Y-m-d H:i:s')."' WHERE productID = {$_POST['productID']}");
+			$this->insert("UPDATE Entry set checkedOut = '".date('Y-m-d H:i:s')."' WHERE productID = {$_POST['productID']} LIMIT 1");
 		} else {
 			return $this->selectMultiple("SELECT * FROM Entry");
 		}
