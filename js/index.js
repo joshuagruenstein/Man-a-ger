@@ -33,8 +33,8 @@ function getEntriesOfThisWeek(entries) {
 	var returnArray = Array()
 	for(var a in entries) {
 		console.log(new Date().getTime())
-		console.log(new Date(entries[a].checkedIn.split(" ")[0]).getTime())
-		if(new Date(entries[a].checkedIn).getTime() - new Date().getTime() < 604800000) returnArray.push(entries[a])
+		console.log(new Date(entries[a].checkedIn.split(" ")[0]).getTime() - new Date().getTime())
+		if(Math.abs(new Date(entries[a].checkedIn.split(" ")[0]).getTime() - new Date().getTime()) < 604800000) returnArray.push(entries[a])
 	}
 	return returnArray
 }
@@ -100,7 +100,7 @@ $(document).ready(function() {
 
 	var weekEntries = getEntriesOfThisWeek(entries)
 	var weekMasses = getMasses(keys, weekEntries, products)
-	var dailyValues = [65, 2.4, 25, 50, 300]
+	var dailyValues = [65*7, 2.4*7, 25*7, 50*7, 300*7]
 	console.log(weekMasses)
 	for(var a in keys) {
 		$("#weeklyInfo").append("<tr><th>"+keys[a]+"</th><th>"+Math.round(weekMasses[keys[a]] * 100/ dailyValues[a])+"%</th></tr>")
