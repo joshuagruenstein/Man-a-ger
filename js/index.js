@@ -33,7 +33,7 @@ function getEntriesOfThisWeek(entries) {
 	var returnArray = Array()
 	for(var a in entries) {
 		console.log(new Date().getTime())
-		console.log(new Date(entries[a].checkedIn).getTime())
+		console.log(new Date(entries[a].checkedIn.split(" ")[0]).getTime())
 		if(new Date(entries[a].checkedIn).getTime() - new Date().getTime() < 604800000) returnArray.push(entries[a])
 	}
 	return returnArray
