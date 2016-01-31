@@ -13,14 +13,18 @@
 
 	<link href="lib/bootstrap.min.css" rel="stylesheet">
 
-	<!-- <link href="style/general.css" rel="stylesheet"> -->
+	<link href="css/general.css" rel="stylesheet">
 </head>
 
 <body>
 	<div class="container">
 		<div class="pageContent">
 			<div class="row">
-				<div class="col-sm-8">
+				<div class="col-sm-7" id="inventoryColumn">
+					<div class="input-group" id="inventoryInput">
+						<span class="input-group-addon" id="basic-addon2">Food</span>
+						<input type="text" class="form-control" placeholder="Yogurt" aria-describedby="basic-addon2">
+					</div>
 					<ul class="list-group">
 						<li class="list-group-item">
 							<span class="label label-default label-pill pull-xs-left">9</span>
