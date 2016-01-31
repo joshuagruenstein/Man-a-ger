@@ -24,6 +24,9 @@
 					<div class="input-group" id="inventoryInput">
 						<span class="input-group-addon" id="basic-addon2">Food</span>
 						<input type="text" class="form-control" placeholder="Yogurt" aria-describedby="basic-addon2">
+						<span class="input-group-btn">
+					    	<button class="btn btn-default" type="button">Enter</button>
+					    </span>
 					</div>
 					<ul class="list-group">
 						<li class="list-group-item">
