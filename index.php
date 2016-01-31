@@ -46,6 +46,26 @@
 					  	</li>
 					</ul>
 				</div>
+				<div class="col-sm-5" id="nutritionColumn">
+					<div class="panel panel-primary" id="nutritionPanel">
+						<div class="panel-heading">
+							<h3 class="panel-title">Nutrition</h3>
+						</div>
+
+						<table class="table well well-sm" id="nutritionTable">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Calories</th>
+									<th>Sugar</th>
+									<th>Vitamins</th>
+								</tr>
+							</thead>
+							<tbody id="nutritionInfo">
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
