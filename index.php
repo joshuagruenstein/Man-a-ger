@@ -91,8 +91,27 @@
 						</table>
 
 						<div class="text-center" id="chartContainer">
-							<canvas id="canvas" width="400" height="400"></canvas>
+							<canvas id="canvas" width="200%" height="200%"></canvas>
 						</div>
+					</div>
+
+					<div class="panel panel-primary" id="dailyPanel">
+						<div class="panel-heading">
+							<h3 class="panel-title">Daily Values</h3>
+						</div>
+
+						<table class="table well well-sm" id="dailyTable">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Calories</th>
+									<th>Sugar</th>
+									<th>Vitamins</th>
+								</tr>
+							</thead>
+							<tbody id="dailyInfo">
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
