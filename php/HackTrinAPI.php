@@ -66,4 +66,38 @@ class HackTrinAPI extends API
 		mysqli_query($this->mysqli, $sql);
 	}
 
+	// ENDPOINTS
+	protected function product() {
+		if(isset($_GET['productID'])) {
+			return $this->select("SELECT * FROM Product WHERE productID = {$_GET['productID']}");
+		} elseif(isset($_POST['productID'])
+			&& isset($_POST['ingredients'])
+			&& isset($_POST['nutrition'])
+			&& isset($_POST['usage'])
+			&& isset($_POST['brand'])
+			&& isset($_POST['description'])) {
+
+			$this->insert("INSERT INTO Product (productID, ingredients, nutrition, usage, brand, description) VALUES ({$_POST['productID']}, {_POST['ingredients']}, {_POST['nutrition']}, {_POST['usage']}, {_POST['brand']}, {_POST['description']})");
+		} else {
+			return $this->selectMultiple("SELECT * FROM Product");
+		}
+	}
+
+	protected function entry() {
+		if(isset($_GET['productID'])) {
+			return $this->selectMultiple("SELECT * FROM Entry WHERE productID = {$_GET['productID']}");
+		} elseif (isset($_POST['productID']) &&
+			isset($_POST['checkedIn'])) {
+
+			$this->insert("INSERT INTO Entry (productID, checkedIn) VALUES ({$_POST['productID']}, {_POST['checkedIn']})");
+		} elseif(isset($_POST['productID'])
+			&& isset($_POST['checkedOut'])) {
+
+			$this->insert("UPDATE Entry set checkedOut = {$_POST['checkedOut']} WHERE productID = {$_POST['checkedOut']}");
+		} else {
+			return $this->selectMultiple("SELECT * FROM Entry");
+		}
+	}
+}
+
  ?>
