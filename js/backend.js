@@ -1,5 +1,16 @@
 url = "php/"
 
+function submitOrder(productUPC,quantity) {
+	var result = $.ajax({
+		url: url+"delivery", 
+		async: false,
+		method: "GET",
+		data: {productUPC: productUPC, quantity: quantity}
+	});
+
+	return result.responseJSON;
+}
+
 function getEntries() {
 	var result = $.ajax({
 		url: url+"entry", 
