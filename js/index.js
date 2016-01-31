@@ -16,7 +16,7 @@ function getMasses(keys, entries, products) {
 	}
 	for(var a = 0; a < entries.length; a++) {
 		var product = getProductWithID(products, entries[a].productID)
-		var nutrition = JSON.parse(product.nutrition.replace(/\^/g, ''))
+		var nutrition = JSON.parse(product.nutrition.replace(/\^/g, '').replace(/\\/g, ''))
 
 		for(var keyIndex in keys) {
 			var key = keys[keyIndex]
