@@ -91,9 +91,17 @@ class HackTrinAPI extends API
 			$this->insert("INSERT INTO Entry (productID, checkedIn) VALUES ('{$_POST['productID']}', '".date('Y-m-d H:i:s')."')");
 		} elseif(isset($_POST['productID']) && isset($_POST['checkout'])) {
 
-			$this->insert("UPDATE Entry set checkedOut = '".date('Y-m-d H:i:s')."' WHERE productID = {$_POST['checkedOut']}");
+			$this->insert("UPDATE Entry set checkedOut = '".date('Y-m-d H:i:s')."' WHERE productID = {$_POST['productID']}");
 		} else {
 			return $this->selectMultiple("SELECT * FROM Entry");
+		}
+	}
+
+	protected function delivery() {
+		if(isset($_GET['productID'])) {
+			$merchantMenu = json_decode(file_get_contents("https://api.delivery.com/merchant/71699/menu?client_id=ZDliNzM4YjVhNjc4OWEzMTI4YmMxNDlkNzlmNDZjNmE5"));
+			var_dump($merchantMenu->menu);
+
 		}
 	}
 }
