@@ -64,9 +64,10 @@
 							<tbody id="nutritionInfo">
 							</tbody>
 						</table>
-					</div>
-					<div id="chart">
-						<canvas id="canvas" width="400" height="400"></canvas>
+
+						<div class="text-center" id="chartContainer">
+							<canvas id="canvas" width="400" height="400"></canvas>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -75,45 +76,7 @@
 
 	<?php include 'includes/footer.php'; ?>
 
-	<script>
-		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
-		var lineChartData = {
-			labels : ["January","February","March","April","May","June","July"],
-			datasets : [
-				{
-					label: "Calories",
-					fillColor : "rgba(220,220,220,0.2)",
-					strokeColor : "rgba(220,220,220,1)",
-					pointColor : "rgba(220,220,220,1)",
-					pointStrokeColor : "#fff",
-					pointHighlightFill : "#fff",
-					pointHighlightStroke : "rgba(220,220,220,1)",
-					data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-				},
-				{
-					label: "Sugar",
-					fillColor : "rgba(151,187,205,0.2)",
-					strokeColor : "rgba(151,187,205,1)",
-					pointColor : "rgba(151,187,205,1)",
-					pointStrokeColor : "#fff",
-					pointHighlightFill : "#fff",
-					pointHighlightStroke : "rgba(151,187,205,1)",
-					data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-				}
-			]
-
-		}
-
-	window.onload = function(){
-		var ctx = document.getElementById("canvas").getContext("2d");
-		window.myLine = new Chart(ctx).Line(lineChartData, {
-			responsive: true
-		});
-	}
-
-
-	</script>
-
+	<script src="js/customCharts.js"></script>
 	<script src="lib/jquery.min.js"></script>
 	<script src="lib/bootstrap.min.js"></script>
 	<script src="lib/Chart.js"></script>

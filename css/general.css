@@ -5,3 +5,8 @@ body {
 #inventoryInput {
 	margin-bottom: 10px;
 }
+
+#chartContainer {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
