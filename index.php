@@ -45,6 +45,31 @@
 					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
 					  	</li>
 					</ul>
+
+					<div class="input-group" id="orderInput">
+						<span class="input-group-addon" id="basic-addon2">Order</span>
+						<input type="text" class="form-control" placeholder="Yogurt" aria-describedby="basic-addon2">
+						<span class="input-group-btn">
+					    	<button class="btn btn-default" type="button">Enter</button>
+					    </span>
+					</div>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<span class="label label-default label-pill pull-xs-left">4</span>
+					    	Apple
+					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
+					  	</li>
+					  	<li class="list-group-item">
+					    	<span class="label label-default label-pill pull-xs-left">4</span>
+					    	Orange
+					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
+					  	</li>
+					  	<li class="list-group-item">
+					    	<span class="label label-default label-pill pull-xs-left">4</span>
+					    	Milk
+					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
+					  	</li>
+					</ul>
 				</div>
 				<div class="col-sm-5" id="nutritionColumn">
 					<div class="panel panel-primary" id="nutritionPanel">
