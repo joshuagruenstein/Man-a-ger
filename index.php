@@ -23,7 +23,7 @@
 				<div class="col-sm-7" id="inventoryColumn">
 					<div class="jumbotron" id="titleJumbotron">
 						<h2>Man(a)ger</h2>
-						<p>Man(a)ger is a tool developed to help people with their daily lives.</p>
+						<p>Man(a)ger keeps tabs on what happens in your kitchen and provides you with analytics regarding how your household is eating.</p>
 					</div>
 					<ul class="list-group" id="inFridgeList">
 					</ul>
