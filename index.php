@@ -23,19 +23,19 @@
 				<div class="col-sm-8">
 					<ul class="list-group">
 						<li class="list-group-item">
-							<span class="label label-default label-pill pull-xs-left">14</span>
-					    	Apples
-					    	<span class="glyphicon glyphicon-remove" id="x"></span>
+							<span class="label label-default label-pill pull-xs-left">9</span>
+					    	Apple
+					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
 					  	</li>
 					  	<li class="list-group-item">
 					    	<span class="label label-default label-pill pull-xs-left">2</span>
-					    	Oranges
-					    	<span class="glyphicon glyphicon-remove" id="x"></span>
+					    	Orange
+					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
 					  	</li>
 					  	<li class="list-group-item">
 					    	<span class="label label-default label-pill pull-xs-left">1</span>
 					    	Milk
-					    	<span class="glyphicon glyphicon-remove" id="x"></span>
+					    	<div class="pull-right"><span class="glyphicon glyphicon-remove"></span></div>
 					  	</li>
 					</ul>
 				</div>
