@@ -15,7 +15,6 @@ function getMasses(keys, entries) {
 		for(var keyIndex in keys) {
 			var key = keys[keyIndex]
 			if(nutrition.hasOwnProperty(key) && nutrition[key].hasOwnProperty("qty") && nutrition[key]["qty"] != null) {
-				console.log(nutrition[key]["qty"])
 				if(nutrition[key]["qty"].includes("mg")) masses[key] += parseInt(nutrition[key]["qty"]) / 1000.0
 				else masses[key] += parseInt(nutrition[key]["qty"])
 			}
@@ -36,11 +35,13 @@ $(document).ready(function() {
 	var entries = getEntries()
 	var keys = ["Total Fat", "Sodium", "Dietary Fiber", "Protein", "Total carbohydrates"]
 	var masses = getMasses(keys, entries)
+	console.log("masses " + masses)
 	console.log(masses)
 	var total = 0
 	for(var a = 0; a < keys.length; a++) {
 		total += masses[keys[a]]
 	}
+	console.log(total)
 	var colors = ["#F7464A", "#5AD3D1", "#FDB45C", "#949FB1", "#4D5360", "#5AD3D1"]
 	var highlights = ["#FF5A5E", "#5AD3D1", "#A8B3C5", "#A8B3C5", "#616774", "#5AD3D1"]
 	var pieData = Array()
@@ -58,10 +59,8 @@ $(document).ready(function() {
 
 	var currentEntries = getCurrentEntries(entries)
 	var alreadyIn = Array()
-	console.log(currentEntries)
 	for(var a in currentEntries) {
 		var entry = currentEntries[a]
-		console.log(alreadyIn)
 
 		// Is in
 		var isAlreadyIn = false

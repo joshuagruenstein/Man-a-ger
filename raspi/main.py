@@ -17,7 +17,7 @@ def getProductInfo(upcCode):
 def storeProductInfo(upcCode):
 	r = requests.get("https://www.digit-eyes.com/gtin/v2_0/", params={'upcCode': upcCode, 'field_names': 'all', 'language': 'en', 'app_key': '/7917Xl9IRJS', 'signature': make_auth_token(upcCode.encode('utf-8'), "Gc08V4m0s2Ru4Gy1".encode('utf-8')).decode("utf-8")})
 	jsonObject = r.json()
-	print(jsonObject['formattedNutrition'])
+	print(r.text)
 	print(json.dumps(jsonObject['formattedNutrition']))
 	r2 = requests.post(url+"php/product", data={"productID": upcCode, "ingredients": jsonObject['ingredients'], "nutrition":  json.dumps(jsonObject['formattedNutrition']), "usageInfo": jsonObject['usage'], "brand": jsonObject['brand'], "description": jsonObject['description']})
 	print(r2.text)
@@ -28,4 +28,4 @@ def newEntry(upcCode):
 	r = requests.post(url+"php/entry", data={"productID": upcCode})
 	print(r.text)
 
-newEntry("")
+newEntry("0049000001327")
