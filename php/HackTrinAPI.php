@@ -97,11 +97,74 @@ class HackTrinAPI extends API
 		}
 	}
 
+	private function isMatch($itemName, $words) {
+		var_dump($itemName);
+		$itemWords = explode(" ", $itemName);
+		$isMatch = false;
+		foreach($itemWords as $word1) {
+			foreach($words as $word2) {
+				if(strcmp($word1, $word2) == 0) {
+					return true;
+					break;
+				}
+			}
+		}
+		return false;
+	}
+
+	private function postRequest($url, $data) {
+		$options = array(
+		    'http' => array(
+		        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+		        'method'  => 'POST',
+		        'content' => http_build_query($data),
+		    ),
+		);
+		$context  = stream_context_create($options);
+		$result = file_get_contents($url, false, $context);
+		if ($result === FALSE) { return "ERROR"; }
+		var_dump($result);
+		return $result;
+	}
+
 	protected function delivery() {
 		if(isset($_GET['productID'])) {
-			$merchantMenu = json_decode(file_get_contents("https://api.delivery.com/merchant/71699/menu?client_id=ZDliNzM4YjVhNjc4OWEzMTI4YmMxNDlkNzlmNDZjNmE5"));
-			var_dump($merchantMenu->menu);
-
+			$productArray = $this->select("SELECT * FROM Product WHERE productID = {$_GET['productID']}");
+			$words = explode(" ", $productArray['description']);
+			$merchantMenu = json_decode(file_get_contents("https://api.delivery.com/merchant/998/menu?client_id=ZDliNzM4YjVhNjc4OWEzMTI4YmMxNDlkNzlmNDZjNmE5"));
+			//var_dump($merchantMenu->menu);
+			foreach($merchantMenu->menu[23]->children as $item) {
+				if($this->isMatch($item->name, $words)) {
+					$this->postRequest( "https://api.delivery.com/third_party/account/create", json_decode("{
+ \"access_token\": \"b8cbc26447696b07e45bfefdf56c645c56ae7512e6a5a0.08241105~44\",
+ \"token_type\": \"bearer\",
+ \"expires\": 1391014905,
+ \"expires_in\": 3600,
+ \"refresh_token\": \"a3Z55n5hP09hCVyLV6NlNwQzXl9RLuz1dXF4yQUv\"
+}"));
+					$this->postRequest("https://api.delivery.com/customer/cart/998", array(
+						"order_type" => "delivery",
+						"instructions" => "yolo",
+						"item" => array(
+							"item_id" => $item->id,
+    						"item_qty" => 1),
+						"client_id" => "ZDliNzM4YjVhNjc4OWEzMTI4YmMxNDlkNzlmNDZjNmE5"));
+					$this->postRequest("https://api.delivery.com/customer/cart/998/checkout", json_decode("{
+  \"tip\": 1.00,
+  \"location_id\": 998,
+  \"instructions\": \"Don't burn my toast again, grandma!\",
+  \"payments\": [
+    {
+      \"type\": \"credit_card\",
+      \"id\": 1
+    }
+  ],
+  \"order_type\": \"delivery\",
+  \"order_time\": \"2014-01-19T08:00:00-0500\"
+}"));
+					break;
+				}
+			}
 		}
 	}
 }
