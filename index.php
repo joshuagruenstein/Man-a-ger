@@ -94,7 +94,7 @@
 
 			$("#dropdownMenu li a").click(function(){
 
-		    	$("#basic-addon2").text("Quantity of " + $(this).text());
+		    	$("#basic-addon2").text($(this).text());
 
 			});
 
