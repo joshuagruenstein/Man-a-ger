@@ -18,10 +18,10 @@
 
 <body>
 	<div class="container">
-		<?php include 'includes/navbar.php'; ?>
-
-		<?php include 'includes/footer.php'; ?>
+		
 	</div>
+
+	<?php include 'includes/footer.php'; ?>
 
 	<script src="lib/jquery.min.js"></script>
 	<script src="lib/bootstrap.min.js"></script>
