@@ -122,9 +122,10 @@
 
 	<?php include 'includes/footer.php'; ?>
 
-	<script src="js/customCharts.js"></script>
 	<script src="lib/jquery.min.js"></script>
 	<script src="lib/bootstrap.min.js"></script>
 	<script src="lib/Chart.js"></script>
+	<script src="js/backend.js"></script>
+	<script src="js/index.js"></script>
 </body>
 </html>
