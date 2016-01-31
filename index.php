@@ -47,7 +47,7 @@
 					</ul>
 
 					<div class="row">
-						<div class="col-sm-1">
+						<div class="col-sm-2">
 							<div class="dropdown" id="itemDropdown">
 						  		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						    		Items
@@ -60,8 +60,7 @@
 								</ul>
 							</div>
 						</div>
-						</div>
-						<div class="col-sm-11">
+						<div class="col-sm-10">
 							<div class="input-group" id="quantityInput">
 								<span class="input-group-addon" id="basic-addon2">Quantity</span>
 								<input type="text" class="form-control" placeholder="3" aria-describedby="basic-addon2">
