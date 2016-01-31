@@ -126,7 +126,7 @@
 				method: "POST",
 				data: { dropoff_address: "799 Park Avenue, New York, NY 10021", pickup_address: "139 West 91st Street, New York, NY 10024" }
 			});
-			console.log(response);
+			console.log("response: " + JSON.stringify(response));
 		});
 	</script>
 </body>
