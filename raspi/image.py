@@ -1,11 +1,10 @@
 import pygame
 import pygame.image
 import pygame.camera
-import os
+import subproccess
 
 pygame.init()
 pygame.camera.init()
-
 cam = pygame.camera.Camera("/dev/video0",(640,480))
 cam.start()
 
