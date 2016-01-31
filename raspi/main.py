@@ -4,8 +4,9 @@ import base64
 import hashlib
 import hmac
 import json
+from image import *
 
-url = "http://localhost/HackTrin/"
+url = "http://162.243.36.95/"
 
 def make_auth_token(upc_string, auth_key):
 	sha_hash = hmac.new(auth_key, upc_string, hashlib.sha1)
@@ -28,4 +29,8 @@ def newEntry(upcCode):
 	r = requests.post(url+"php/entry", data={"productID": upcCode})
 	print(r.text)
 
-newEntry("0049000001327")
+while True:
+	result = getBarcode()
+	if result != "fail":
+		print("workss")
+		newEntry(result)
